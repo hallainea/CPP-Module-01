@@ -1,23 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Pony.cpp                                           :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahallain <ahallain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/12 19:11:50 by ahallain          #+#    #+#             */
-/*   Updated: 2021/03/13 20:03:54 by ahallain         ###   ########.fr       */
+/*   Created: 2021/03/13 20:06:07 by ahallain          #+#    #+#             */
+/*   Updated: 2021/03/13 20:12:35 by ahallain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Pony.hpp"
 #include <iostream>
+#include "Human.hpp"
 
-Pony::Pony(std::string name) : name(name)
+int main()
 {
-}
-
-void Pony::print(void)
-{
-	std::cout << Pony::name << std::endl;
+	Human bob;
+	std::cout << bob.identify() << std::endl;
+	std::cout << bob.getBrain().identify() << std::endl;
 }

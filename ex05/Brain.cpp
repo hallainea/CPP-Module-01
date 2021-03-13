@@ -1,23 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Pony.cpp                                           :+:      :+:    :+:   */
+/*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahallain <ahallain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/12 19:11:50 by ahallain          #+#    #+#             */
-/*   Updated: 2021/03/13 20:03:54 by ahallain         ###   ########.fr       */
+/*   Created: 2021/03/13 19:56:09 by ahallain          #+#    #+#             */
+/*   Updated: 2021/03/13 20:06:46 by ahallain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Pony.hpp"
-#include <iostream>
+#include <sstream>
+#include "Brain.hpp"
 
-Pony::Pony(std::string name) : name(name)
+std::string Brain::identify(void)
 {
-}
+	std::stringstream address;
 
-void Pony::print(void)
-{
-	std::cout << Pony::name << std::endl;
+	address << this;
+	return (address.str());
 }

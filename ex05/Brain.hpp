@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Pony.cpp                                           :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahallain <ahallain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/12 19:11:50 by ahallain          #+#    #+#             */
-/*   Updated: 2021/03/13 20:03:54 by ahallain         ###   ########.fr       */
+/*   Created: 2021/03/13 19:55:02 by ahallain          #+#    #+#             */
+/*   Updated: 2021/03/13 20:06:48 by ahallain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Pony.hpp"
-#include <iostream>
+#ifndef BRAIN_HPP
+#define BRAIN_HPP
 
-Pony::Pony(std::string name) : name(name)
-{
-}
+#include <string>
 
-void Pony::print(void)
+class Brain
 {
-	std::cout << Pony::name << std::endl;
-}
+public:
+	std::string identify(void);
+};
+#endif

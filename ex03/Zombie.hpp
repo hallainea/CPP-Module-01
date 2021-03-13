@@ -6,7 +6,7 @@
 /*   By: ahallain <ahallain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 10:21:56 by ahallain          #+#    #+#             */
-/*   Updated: 2021/03/13 19:53:09 by ahallain         ###   ########.fr       */
+/*   Updated: 2021/03/13 20:03:41 by ahallain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ private:
 	std::string type;
 
 public:
-	Zombie();
+	Zombie(void);
 	Zombie(std::string name, std::string type);
 	void init(std::string name, std::string type);
 	void advert(void);

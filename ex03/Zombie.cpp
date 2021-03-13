@@ -6,14 +6,14 @@
 /*   By: ahallain <ahallain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 10:24:38 by ahallain          #+#    #+#             */
-/*   Updated: 2021/03/13 19:53:07 by ahallain         ###   ########.fr       */
+/*   Updated: 2021/03/13 20:03:34 by ahallain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 #include <iostream>
 
-Zombie::Zombie() : name("unknown"), type("unknown")
+Zombie::Zombie(void) : name("unknown"), type("unknown")
 {
 }
 

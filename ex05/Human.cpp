@@ -1,23 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Pony.cpp                                           :+:      :+:    :+:   */
+/*   Human.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahallain <ahallain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/12 19:11:50 by ahallain          #+#    #+#             */
-/*   Updated: 2021/03/13 20:03:54 by ahallain         ###   ########.fr       */
+/*   Created: 2021/03/13 20:02:56 by ahallain          #+#    #+#             */
+/*   Updated: 2021/03/13 20:12:33 by ahallain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Pony.hpp"
-#include <iostream>
+#include "Human.hpp"
 
-Pony::Pony(std::string name) : name(name)
+Human::Human(void) : brain(new Brain)
 {
 }
-
-void Pony::print(void)
+Human::~Human(void)
 {
-	std::cout << Pony::name << std::endl;
+	delete Human::brain;
+}
+
+Brain &Human::getBrain(void)
+{
+	return (*Human::brain);
+}
+
+std::string Human::identify(void)
+{
+	return (Human::getBrain().identify());
 }

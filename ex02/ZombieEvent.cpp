@@ -6,14 +6,14 @@
 /*   By: ahallain <ahallain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 10:30:55 by ahallain          #+#    #+#             */
-/*   Updated: 2021/03/13 19:52:48 by ahallain         ###   ########.fr       */
+/*   Updated: 2021/03/13 20:04:17 by ahallain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <cstdlib>
 #include "ZombieEvent.hpp"
 
-ZombieEvent::ZombieEvent() : type("unknown")
+ZombieEvent::ZombieEvent(void) : type("unknown")
 {
 	srand(time(NULL));
 }
