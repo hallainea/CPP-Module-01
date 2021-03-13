@@ -1,0 +1,27 @@
+SOURCES				=	main.cpp
+OBJECTS				=	${SOURCES:.cpp=.o}
+
+NAME				=	replace
+
+COMPILE				=	clang++
+REMOVE				=	rm -f
+
+COMPILATION_FLAGS	=	-Wall -Wextra -Werror -std=c++98 -pedantic-errors
+
+.cpp.o:
+	${COMPILE} ${COMPILATION_FLAGS} -c $< -o ${<:.cpp=.o}
+
+all: ${NAME}
+
+${NAME}: ${OBJECTS}
+	${COMPILE} -o ${NAME} ${OBJECTS}
+
+clean:
+	${REMOVE} ${OBJECTS}
+
+fclean: clean
+	${REMOVE} ${NAME}
+
+re: fclean all
+
+.PHONY: all clean fclean re
