@@ -1,41 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ZombieEvent.cpp                                    :+:      :+:    :+:   */
+/*   ZombieHorde.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahallain <ahallain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/13 10:30:55 by ahallain          #+#    #+#             */
-/*   Updated: 2021/03/13 19:43:25 by ahallain         ###   ########.fr       */
+/*   Created: 2021/03/13 19:30:02 by ahallain          #+#    #+#             */
+/*   Updated: 2021/03/13 19:45:54 by ahallain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <cstdlib>
-#include "ZombieEvent.hpp"
+#include "ZombieHorde.hpp"
 
-ZombieEvent::ZombieEvent() : type("unknown")
+ZombieHorde::ZombieHorde(int n)
 {
 	srand(time(NULL));
-}
-
-void ZombieEvent::setZombieType(std::string type)
-{
-	ZombieEvent::type = type;
-}
-
-Zombie *ZombieEvent::newZombie(std::string name)
-{
-	return (new Zombie(name, ZombieEvent::type));
-}
-
-void ZombieEvent::randomChump(void)
-{
+	if (n <= 0)
+		throw "Invalid amount of zombies.";
+	ZombieHorde::amount = n;
 	std::string name[] = {
 		"Sylvain",
 		"Antoine",
 		"Rémi",
 		"Eric",
 		"Marine"};
-	Zombie zombie = Zombie(name[rand() % sizeof(name) / sizeof(*name)], ZombieEvent::type);
-	zombie.advert();
+	ZombieHorde::zombie = new Zombie[n];
+	while (n--)
+		ZombieHorde::zombie[n].init(name[rand() % sizeof(name) / sizeof(*name)], "unknown");
+}
+
+ZombieHorde::~ZombieHorde(void)
+{
+	delete [] ZombieHorde::zombie;
+}
+
+void ZombieHorde::advert(void)
+{
+	int n = ZombieHorde::amount;
+	while (n--)
+		ZombieHorde::zombie[n].advert();
 }
