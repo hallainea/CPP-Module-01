@@ -6,7 +6,7 @@
 /*   By: ahallain <ahallain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 19:30:02 by ahallain          #+#    #+#             */
-/*   Updated: 2021/03/13 19:45:54 by ahallain         ###   ########.fr       */
+/*   Updated: 2021/03/13 19:53:13 by ahallain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ ZombieHorde::ZombieHorde(int n)
 
 ZombieHorde::~ZombieHorde(void)
 {
-	delete [] ZombieHorde::zombie;
+	delete[] ZombieHorde::zombie;
 }
 
 void ZombieHorde::advert(void)

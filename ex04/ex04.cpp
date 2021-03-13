@@ -1,33 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   ex04.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahallain <ahallain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/13 10:24:38 by ahallain          #+#    #+#             */
-/*   Updated: 2021/03/13 19:53:07 by ahallain         ###   ########.fr       */
+/*   Created: 2021/03/13 19:47:55 by ahallain          #+#    #+#             */
+/*   Updated: 2021/03/13 19:54:08 by ahallain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include <string>
 #include <iostream>
 
-Zombie::Zombie() : name("unknown"), type("unknown")
+int main(void)
 {
-}
+	std::string string = "HI THIS IS BRAIN";
+	std::string *pointer = &string;
+	std::string &reference = string;
 
-Zombie::Zombie(std::string name, std::string type) : name(name), type(type)
-{
-}
-
-void Zombie::init(std::string name, std::string type)
-{
-	Zombie::name = name;
-	Zombie::type = type;
-}
-
-void Zombie::advert(void)
-{
-	std::cout << '<' << Zombie::name << " (" << Zombie::type << ")> Braiiiiiiinnnssss ..." << std::endl;
+	std::cout << *pointer << std::endl;
+	std::cout << reference << std::endl;
+	return (0);
 }
